@@ -1,4 +1,4 @@
-# Suggested Prompts
+# Suggested Prompts and Notes
 
 # Create a python requirements.txt file for my code
 
@@ -15,11 +15,14 @@ gcloud run deploy streamlit-gemini \
 
 # Notice. It does not know what the PROECT_ID is.  We would have to set correct that.
 
-# Easier method to build, store and deploy code to Cloud Run
-gcloud run deploy streamlit-gemini \
---source . \
+# Easier method to build, store and deploy code to Cloud Run directly
+gcloud run deploy --source . streamlit-gemini \
 --allow-unauthenticated \
---region us-central-1
+--region us-central1
 
 ## Unfortunately, this will not work directly on Argolis, due to Cloud Run security restrictions.
 ## I am looking into a workaround.
+
+## Attempted on personal account for testing.
+## 1) Attempt failed since Vertex AI API was not enabled.  Enabled...
+## 2) Second attempt worked.
